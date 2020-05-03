@@ -25,7 +25,7 @@ public class Task2 {
     }
 
     public static void showSquares(int N) throws NegativeNumberException {
-        List<Integer> numbers = new ArrayList<Integer>(N);
+        List<Integer> numbers = new ArrayList<>(N);
         Random random = new Random();
         //генерация случайного набора целых чисел
         for(int i = 0; i < N; i++){
@@ -38,11 +38,12 @@ public class Task2 {
         for(Integer num : numbers){
             if(num < 0){
                 //числа должны быть больше нуля
-                throw new NegativeNumberException("Число " + num + "оказалось меньше нуля");
+                throw new NegativeNumberException("Число " + num + " оказалось меньше нуля");
             }
             double result = Math.sqrt(num);
             //проверка, что корень из числа - целое число.
             if(result - Math.floor(result) == 0){
+                System.out.println("Корень из числа - целое число:");
                 System.out.println(num);
             }
         }
